@@ -1,5 +1,6 @@
 import { useState } from "react";
 import cards from "@/data/cardsData";
+import StarCheckbox from "@/components/ui/StarCheckbox";
 
 export default function Home() {
   const [selectedCards, setSelectedCards] = useState({});
@@ -41,22 +42,21 @@ export default function Home() {
   };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen font-sans">
+    <div className="p-6 bg-gray-100 min-h-screen font-quicksand">
       <div className="container mx-auto flex">
         {/* Left side: card images with checkboxes */}
         <div className="w-1/2 pr-4">
-          <h1 className="text-3xl font-bold mb-6">
-            Monopoly Go Card Collection
+          <h1 className="text-3xl font-bold mb-6 border">
+            Monopoly Go Current 4 & 5 * Card Collection
           </h1>
-          <div id="card-select-container" className="grid grid-cols-3 gap-4">
+          <div className="filter-bar flex items-center gap-3">
+            <span> Cards:</span>
+            <StarCheckbox label="⭐⭐⭐⭐" /> <StarCheckbox label="⭐⭐⭐⭐⭐" />
+          </div>
+          <div id="card-select-container" className="grid grid-cols-3 g">
             {cards.map((card) => (
               <div key={card.name} className="flex flex-col items-center">
-                <img
-                  src={card.img}
-                  alt={card.name}
-                  className="w-24 h-24 object-cover mb-2"
-                />
-                <label className="flex items-center space-x-2">
+                <label className="flex flex-col items-center space-x-2 border border-black p-3">
                   <input
                     type="checkbox"
                     className="form-checkbox"
@@ -66,6 +66,11 @@ export default function Home() {
                     }
                   />
                   <span>{card.name}</span>
+                  <img
+                    src={card.img}
+                    alt={card.name}
+                    className="w-fit h-fit object-cover mb-2"
+                  />
                 </label>
               </div>
             ))}
