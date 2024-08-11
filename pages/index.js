@@ -57,15 +57,15 @@ export default function Home() {
           Monopoly Go My Cards!
         </h1>
         <p>
-          We made an easy text preset for copying to trade on your discord
-          server or other community to make it easier to find your message when
-          searching.
+          We've made it super easy to trade your cards on Discord or any other
+          community. Use our text preset to make your message searchable!
         </p>
         <p>
-          Just click on the card you want and the card you have duplicated (it
-          is set to neutral by default)
+          Just click on the card you want and the card you have duplicated (it's
+          set to neutral by default).
         </p>
-        <p>Available for 4-5 star cards</p>
+        <p className="py-4">* Available for 4-5 star cards!</p>
+
         <main className="flex">
           <div className="w-1/2 pr-4">
             <div className="filter-bar flex items-center gap-3 mb-4">
