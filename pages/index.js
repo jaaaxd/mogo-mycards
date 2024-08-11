@@ -57,11 +57,11 @@ export default function Home() {
           Monopoly Go My Cards!
         </h1>
         <p>
-          We've made it super easy to trade your cards on Discord or any other
+          We&apos;ve made it super easy to trade your cards on Discord or any other
           community. Use our text preset to make your message searchable!
         </p>
         <p>
-          Just click on the card you want and the card you have duplicated (it's
+          Just click on the card you want and the card you have duplicated (it&apos;s
           set to neutral by default).
         </p>
         <p className="py-4">* Available for 4-5 star cards!</p>
