@@ -1,28 +1,36 @@
-import { useState } from "react";
-import cards from "@/data/cardsData";
+import { useState, useEffect } from "react";
+import cardsData from "@/data/cardsData";
 import StarCheckbox from "@/components/ui/StarCheckbox";
+import Image from "next/image";
+
 
 export default function Home() {
-  const [selectedCards, setSelectedCards] = useState({});
   const [textareaContent, setTextareaContent] = useState("");
+  const [cards, setCards] = useState(
+    cardsData.map((card) => ({ ...card, status: 1 }))
+  );
 
-  const handleCheckboxChange = (card, isChecked) => {
-    setSelectedCards((prevState) => ({
-      ...prevState,
-      [card]: isChecked ? card : undefined,
-    }));
-    setTextareaContent(
-      getSelectedCardsText({
-        ...selectedCards,
-        [card]: isChecked ? card : undefined,
-      })
-    );
-  };
-
-  const getSelectedCardsText = (cardsState = selectedCards) => {
-    return Object.values(cardsState)
-      .filter((card) => card)
+  useEffect(() => {
+    const cardsInStatus2 = cards
+      .filter((card) => card.status === 2)
+      .map((card) => card.name)
       .join("\n");
+    const cardsInStatus3 = cards
+      .filter((card) => card.status === 3)
+      .map((card) => card.name)
+      .join("\n");
+
+    setTextareaContent(
+      `What I have:\n${cardsInStatus2}\n\nWhat I want:\n${cardsInStatus3}`
+    );
+  }, [cards]);
+
+  const handleClick = (index) => {
+    setCards((prevCards) =>
+      prevCards.map((card, i) =>
+        i === index ? { ...card, status: (card.status % 3) + 1 } : card
+      )
+    );
   };
 
   const copyToClipboard = () => {
@@ -37,7 +45,7 @@ export default function Home() {
   };
 
   const resetSelections = () => {
-    setSelectedCards({});
+    setCards(cardsData.map((card) => ({ ...card, status: 1 })));
     setTextareaContent("");
   };
 
@@ -51,27 +59,38 @@ export default function Home() {
           </h1>
           <div className="filter-bar flex items-center gap-3">
             <span> Cards:</span>
-            <StarCheckbox label="⭐⭐⭐⭐" /> <StarCheckbox label="⭐⭐⭐⭐⭐" />
+            <StarCheckbox label="⭐⭐⭐⭐" />{" "}
+            <StarCheckbox label="⭐⭐⭐⭐⭐" />
           </div>
-          <div id="card-select-container" className="grid grid-cols-3 g">
-            {cards.map((card) => (
-              <div key={card.name} className="flex flex-col items-center">
-                <label className="flex flex-col items-center space-x-2 border border-black p-3">
-                  <input
-                    type="checkbox"
-                    className="form-checkbox"
-                    checked={!!selectedCards[card.name]}
-                    onChange={(e) =>
-                      handleCheckboxChange(card.name, e.target.checked)
-                    }
-                  />
-                  <span>{card.name}</span>
+          <div id="card-select-container" className="grid grid-cols-3 gap-3">
+            {cards.map((card, index) => (
+              <div
+                key={index}
+                className={`card-container flex flex-col w-fit items-center space-x-2 border-2 p-3 ${
+                  card.status === 1
+                    ? "border-green-500"
+                    : card.status === 2
+                    ? "border-red-500"
+                    : "border-black"
+                }`}
+                onClick={() => handleClick(index)}
+              >
+                <span>{card.name}</span>
+                <div className="card-image relative">
                   <img
                     src={card.img}
                     alt={card.name}
-                    className="w-fit h-fit object-cover mb-2"
+                    className={`w-fit h-fit object-cover mb-2 ${
+                      card.status === 3 ? "grayscale" : ""
+                    }`}
                   />
-                </label>
+
+                  {card.status === 2 && (
+                    <div className="absolute bottom-1 right-0 rounded-lg text-lg font-bold bg-white py-1 px-2">
+                      +1
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -82,7 +101,7 @@ export default function Home() {
             id="selected-cards"
             className="w-full h-96 p-2 border border-gray-300 rounded mb-4"
             value={textareaContent}
-            onChange={(e) => setTextareaContent(e.target.value)}
+            readOnly
           ></textarea>
           <button
             onClick={copyToClipboard}
