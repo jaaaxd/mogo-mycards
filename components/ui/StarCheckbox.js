@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
-export default function StarCheckbox({ label }) {
-  const [checked, setChecked] = useState(false);
+export default function StarCheckbox({ label, value, onChange }) {
+  const [checked, setChecked] = useState(true);
 
   const handleChange = () => {
-    setChecked(!checked);
+    const newCheckedState = !checked;
+    setChecked(newCheckedState);
+    onChange(value, newCheckedState);
   };
 
   return (
@@ -13,6 +15,7 @@ export default function StarCheckbox({ label }) {
         type="checkbox"
         className="hidden"
         checked={checked}
+        value={value}
         onChange={handleChange}
       />
       <div

@@ -1,13 +1,24 @@
 import { useState, useEffect } from "react";
 import cardsData from "@/data/cardsData";
 import StarCheckbox from "@/components/ui/StarCheckbox";
-import Image from "next/image";
 
 export default function Home() {
   const [textareaContent, setTextareaContent] = useState("");
+  const [selectedStars, setSelectedStars] = useState([4, 5]);
+
+  const filterCards = (cardsData, selectedStars) => {
+    return cardsData.filter((card) => selectedStars.includes(card.stars));
+  };
+
+  const filteredCards = filterCards(cardsData, selectedStars);
+  
   const [cards, setCards] = useState(
-    cardsData.map((card) => ({ ...card, status: 1 }))
+    filteredCards.map((card) => ({ ...card, status: 1 }))
   );
+
+  useEffect(() => {
+    setCards(filteredCards.map((card) => ({ ...card, status: 1 })));
+  }, [selectedStars, cardsData]);
 
   useEffect(() => {
     const cardsInStatus2 = cards
@@ -46,8 +57,16 @@ export default function Home() {
   };
 
   const resetSelections = () => {
-    setCards(cardsData.map((card) => ({ ...card, status: 1 })));
+    setCards(filteredCards.map((card) => ({ ...card, status: 1 })));
     setTextareaContent("");
+  };
+
+  const handleCheckboxChange = (value, isChecked) => {
+    if (isChecked) {
+      setSelectedStars([...selectedStars, value]);
+    } else {
+      setSelectedStars(selectedStars.filter((v) => v !== value));
+    }
   };
 
   return (
@@ -57,12 +76,12 @@ export default function Home() {
           Monopoly Go My Cards!
         </h1>
         <p>
-          We&apos;ve made it super easy to trade your cards on Discord or any other
-          community. Use our text preset to make your message searchable!
+          We&apos;ve made it super easy to trade your cards on Discord or any
+          other community. Use our text preset to make your message searchable!
         </p>
         <p>
-          Just click on the card you want and the card you have duplicated (it&apos;s
-          set to neutral by default).
+          Just click on the card you want and the card you have duplicated
+          (it&apos;s set to neutral by default).
         </p>
         <p className="py-4">* Available for 4-5 star cards!</p>
 
@@ -70,8 +89,16 @@ export default function Home() {
           <div className="w-1/2 pr-4">
             <div className="filter-bar flex items-center gap-3 mb-4">
               <span>Filter:</span>
-              <StarCheckbox label="⭐⭐⭐⭐" />
-              <StarCheckbox label="⭐⭐⭐⭐⭐" />
+              <StarCheckbox
+                label="⭐⭐⭐⭐"
+                value={4}
+                onChange={handleCheckboxChange}
+              />
+              <StarCheckbox
+                label="⭐⭐⭐⭐⭐"
+                value={5}
+                onChange={handleCheckboxChange}
+              />
             </div>
             <div id="card-select-container" className="grid grid-cols-3 gap-4">
               {cards.map((card, index) => (
