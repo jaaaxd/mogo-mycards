@@ -11,7 +11,7 @@ export default function Home() {
   };
 
   const filteredCards = filterCards(cardsData, selectedStars);
-  
+
   const [cards, setCards] = useState(
     filteredCards.map((card) => ({ ...card, status: 1 }))
   );
@@ -71,7 +71,7 @@ export default function Home() {
 
   return (
     <div className="p-6 bg-[#FAF9F4] min-h-screen font-quicksand">
-      <div className="container mx-auto flex flex-col">
+      <div className="container mx-auto flex flex-col gap-2">
         <h1 className="font-josefin-sans text-3xl mb-6">
           Monopoly Go My Cards!
         </h1>
@@ -100,16 +100,16 @@ export default function Home() {
                 onChange={handleCheckboxChange}
               />
             </div>
-            <div id="card-select-container" className="grid grid-cols-3 gap-4">
+            <div id="card-select-container" className="grid grid-cols-3">
               {cards.map((card, index) => (
                 <div
                   key={index}
-                  className={`card-container flex flex-col w-fit items-center space-x-2 border-2 p-3 ${
+                  className={`card-container flex flex-col w-full items-center space-x-2 border-2 p-3 ${
                     card.status === 1
-                      ? "border-gray-400"
+                      ? "border-gray"
                       : card.status === 2
-                      ? "border-green-500"
-                      : "border-red-500"
+                      ? "border-primary"
+                      : "border-gray"
                   }`}
                   onClick={() => handleClick(index)}
                 >
@@ -124,7 +124,7 @@ export default function Home() {
                     />
 
                     {card.status === 2 && (
-                      <div className="absolute bottom-1 right-0 rounded-lg text-lg font-bold bg-white py-1 px-2">
+                      <div className="absolute bottom-4 right-2 rounded-full text-lg  bg-white py-1 px-2 text-[#00aeff]">
                         +1
                       </div>
                     )}

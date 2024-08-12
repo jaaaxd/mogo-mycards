@@ -19,10 +19,10 @@ export default function StarCheckbox({ label, value, onChange }) {
         onChange={handleChange}
       />
       <div
-        className={`px-4 py-2 border-2 rounded transition-colors duration-300 flex items-center justify-center ${
+        className={`px-4 py-1 rounded-lg transition-colors duration-300 flex items-center justify-center ${
           checked
-            ? "bg-blue-500 border-blue-500 text-white"
-            : "bg-white border-gray-300 text-gray-800"
+            ? "border-primary border-2 bg-[#f2e7c6]"
+            : "border-gray-light border"
         }`}
       >
         {label}
