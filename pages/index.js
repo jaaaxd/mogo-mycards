@@ -142,13 +142,13 @@ export default function Home() {
             ></textarea>
             <button
               onClick={copyToClipboard}
-              className="bg-blue-500 text-white px-4 py-2 rounded mr-2"
+              className="bg-primary text-white px-4 py-2 rounded mr-2"
             >
               Copy to Clipboard
             </button>
             <button
               onClick={resetSelections}
-              className="bg-red-500 text-white px-4 py-2 rounded"
+              className="bg-gray text-white px-4 py-2 rounded"
             >
               Reset
             </button>
