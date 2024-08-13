@@ -25,15 +25,15 @@ export default function Home() {
   useEffect(() => {
     const cardsInStatus2 = cards
       .filter((card) => card.status === 2)
-      .map((card) => card.name)
+      .map((card) => `✅ ${card.name}`) // Add checkbox emoji
       .join("\n");
     const cardsInStatus3 = cards
       .filter((card) => card.status === 3)
-      .map((card) => card.name)
+      .map((card) => `• ${card.name}`) // Add related emoji
       .join("\n");
 
     setTextareaContent(
-      `What I have:\n${cardsInStatus2}\n\nWhat I want:\n${cardsInStatus3}`
+      `What I have ⭐️\n${cardsInStatus2}\n\nWhat I need ⭐️\n${cardsInStatus3}`
     );
   }, [cards]);
 
@@ -45,7 +45,7 @@ export default function Home() {
     );
   };
 
-  const fullTextContent = "LF 1:1\n\n" + textareaContent;
+  const fullTextContent = "LF Trade 1:1\n\n" + textareaContent + "\n\nDM ME FOR TRADE!✨";
 
   const copyToClipboard = () => {
     navigator.clipboard
@@ -83,7 +83,7 @@ export default function Home() {
           other community. Use our text preset to make your message searchable!
         </p>
         <p>
-          Just click on the card you want and the card you have duplicated
+          Just click on the card you need and the card you have duplicated
           (it&apos;s set to neutral by default).
         </p>
         <p className="py-4">* Available for 4-5 star cards!</p>
@@ -127,7 +127,7 @@ export default function Home() {
                     />
 
                     {card.status === 2 && (
-                      <div className="absolute bottom-4 right-2 rounded-full text-lg  bg-white py-1 px-2 text-[#00aeff]">
+                      <div className="absolute bottom-4 right-2 rounded-full text-lg  bg-[#1CCD83] py-1 px-3 text-white border-[3px] shadow-lg font-textarea">
                         +1
                       </div>
                     )}
