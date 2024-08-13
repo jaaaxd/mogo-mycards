@@ -1,6 +1,24 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          // Customizing the default theme
+          primary: "#debf59", // orange-500
+          "primary-content": "#FFFFFF",
+          secondary: "#000000", // black
+          accent: "#FFCA62", // yellow
+          neutral: "#3A3B46", //gray-600
+          "base-100": "#FFFFFF", // Change this to the background color you want
+          info: "#76D0FC",
+          success: "#1CCD83",
+          error: "#FA8AC0",
+          warning: "#FFCA62",
+        },
+      },
+    ],
+  },
   content: [
     "./pages/**/*.{js,jsx}",
     "./components/**/*.{js,jsx}",
@@ -41,5 +59,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("daisyui")],
 };

@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import cardsData from "@/data/cardsData";
 import StarCheckbox from "@/components/ui/StarCheckbox";
+import { Toaster, toast } from "alert";
+import Info from "@/components/ui/Info";
 
 export default function Home() {
   const [textareaContent, setTextareaContent] = useState("");
@@ -49,7 +51,7 @@ export default function Home() {
     navigator.clipboard
       .writeText(textareaContent)
       .then(() => {
-        alert("Copied to clipboard!");
+        toast.success("Copied to clipboard!");
       })
       .catch((err) => {
         console.error("Could not copy text: ", err);
@@ -71,6 +73,7 @@ export default function Home() {
 
   return (
     <div className="p-6 bg-[#FAF9F4] min-h-screen font-quicksand">
+      <Info />
       <div className="container mx-auto flex flex-col gap-2">
         <h1 className="font-josefin-sans text-3xl mb-6">
           Monopoly Go My Cards!
@@ -140,6 +143,7 @@ export default function Home() {
               value={fullTextContent}
               readOnly
             ></textarea>
+            <Toaster position="top-right" theme="dark" />
             <button
               onClick={copyToClipboard}
               className="bg-primary text-white px-4 py-2 rounded mr-2"
