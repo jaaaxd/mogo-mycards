@@ -4,6 +4,9 @@ import StarCheckbox from "@/components/ui/StarCheckbox";
 import { Toaster, toast } from "alert";
 import Info from "@/components/ui/Info";
 import CardAlbums from "@/components/CardAlbums";
+import Button from "@/components/ui/Button";
+import Image from "next/image";
+import star from "@/public/icons/star.png";
 
 export const HomeContext = createContext();
 
@@ -79,7 +82,7 @@ export default function Home() {
     <HomeContext.Provider
       value={{
         cards,
-        handleCardClick
+        handleCardClick,
       }}
     >
       <div className="p-6 bg-[#FAF9F4] min-h-screen font-quicksand">
@@ -99,20 +102,12 @@ export default function Home() {
           </p>
           <p className="py-4">* Available for 4-5 star cards!</p>
 
-          <main className="flex">
-            <div className="w-1/2 pr-4">
+          <main className="flex max-lg:flex-col-reverse gap-6 w-full">
+            <div className="lg:w-1/2 w-full pr-4">
               <div className="filter-bar flex items-center gap-3 mb-4">
                 <span>Filter:</span>
-                <StarCheckbox
-                  label="⭐⭐⭐⭐"
-                  value={4}
-                  onChange={handleCheckboxChange}
-                />
-                <StarCheckbox
-                  label="⭐⭐⭐⭐⭐"
-                  value={5}
-                  onChange={handleCheckboxChange}
-                />
+                <StarCheckbox value={4} onChange={handleCheckboxChange} />
+                <StarCheckbox value={5} onChange={handleCheckboxChange} />
               </div>
               <CardAlbums />
             </div>
@@ -124,18 +119,19 @@ export default function Home() {
                 readOnly
               ></textarea>
               <Toaster position="top-right" theme="dark" />
-              <button
-                onClick={copyToClipboard}
-                className="bg-primary text-white px-4 py-2 rounded mr-2"
-              >
-                Copy to Clipboard
-              </button>
-              <button
-                onClick={resetSelections}
-                className="bg-gray text-white px-4 py-2 rounded"
-              >
-                Reset
-              </button>
+              <div className="buttons flex gap-3">
+                <Button
+                  text="COPY"
+                  onClick={copyToClipboard}
+                  type="green-button"
+                />
+
+                <Button
+                  text="RESET"
+                  onClick={resetSelections}
+                  type="orange-button"
+                />
+              </div>
             </div>
           </main>
         </div>

@@ -34,8 +34,34 @@ body {
   inset 0 -6px 5px 0 rgb(0 0 0 / 0.1); /* Bottom shadow */
 }
 
-.tag {
-  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+.green-button {
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+  text-shadow: rgba(0, 0, 0, 0.16) 0.03125rem 0.0125rem;
+  background: linear-gradient(rgb(99, 198, 4) 0%, rgb(74, 194, 0) 100%) 0% 0% no-repeat border-box border-box;
+  box-shadow: rgb(53, 144, 0) 0px 0.125rem 0px 0px, rgba(179, 174, 119, 0.6) 0px 0.25rem 0.125rem 0px;
+  border: 1px solid rgb(123, 228, 34);
+  transition: 0.1s cubic-bezier(0, 1.5, 1, 2);
+}
+
+.green-button:active {
+  box-shadow: rgb(53, 144, 0) 0px 0.1rem 0px 0px, rgba(179, 174, 119, 0.6) 0px 0 0.125rem 0px;
+  transform: scale(99%);
+}
+
+.orange-button {
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+  text-shadow: rgba(0, 0, 0, 0.16) 0.03125rem 0.0125rem;
+  background: linear-gradient(rgb(255, 165, 9) 0%, rgb(228, 157, 3) 100%) 0% 0% no-repeat border-box border-box;
+  box-shadow: rgb(187, 115, 0) 0px 0.125rem 0px 0px, rgba(180, 151, 136, 0.6) 0px 0.25rem 0.125rem 0px;
+  border: 1px solid rgb(228, 167, 34);
+  transition: 0.1s cubic-bezier(0, 1.5, 1, 2);
+}
+
+.orange-button:active {
+  box-shadow: rgb(187, 115, 0) 0px 0.1rem 0px 0px, rgba(180, 151, 136, 0.6)0px 0 0.125rem 0px;
+  transform: scale(99%);
 }
 
 @layer base {

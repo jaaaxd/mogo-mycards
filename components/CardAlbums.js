@@ -27,7 +27,7 @@ export default function CardAlbums() {
               />
 
               {card.status === 2 && (
-                <div className="absolute bottom-14 left-0 rounded-[2px] text-[28px]  bg-white px-3 max-h-[40px] text-gray-300 border-[2px] w-[70px] font-bold text-center border-gray-100 justify-center items-center flex">
+                <div className="absolute bottom-11 left-0 rounded-[2px] text-[22px]  bg-white pl-2 pr-3 max-h-[32px] text-gray-300 border-[2px] w-[60px] font-bold text-center border-gray-100 justify-center items-center flex">
                   +1
                 </div>
               )}

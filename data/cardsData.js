@@ -36,7 +36,7 @@ const cards = [
   { name: "Touch!", img: "/cards/49.png", stars: 5 },
   // { name: "Prime Victory", img: "/cards/28.webp", stars: 5 },
   // { name: "Half-Mile Aisle", img: "/cards/29.webp", stars: 4 },
-  { name: "Bursting Buggy", img: "/cards/31.png", stars: 5 },
+  // { name: "Bursting Buggy", img: "/cards/31.png", stars: 5 },
 ];
 
 export default cards;
