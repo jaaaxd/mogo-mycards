@@ -5,8 +5,6 @@ import { Toaster, toast } from "alert";
 import Info from "@/components/ui/Info";
 import CardAlbums from "@/components/CardAlbums";
 import Button from "@/components/ui/Button";
-import Image from "next/image";
-import star from "@/public/icons/star.png";
 
 export const HomeContext = createContext();
 
@@ -31,11 +29,11 @@ export default function Home() {
   useEffect(() => {
     const cardsInStatus2 = cards
       .filter((card) => card.status === 2)
-      .map((card) => `✅ ${card.name}`) // Add checkbox emoji
+      .map((card) => `✅ ${card.name}`)
       .join("\n");
     const cardsInStatus3 = cards
       .filter((card) => card.status === 3)
-      .map((card) => `• ${card.name}`) // Add related emoji
+      .map((card) => `• ${card.name}`)
       .join("\n");
 
     setTextareaContent(
@@ -85,8 +83,9 @@ export default function Home() {
         handleCardClick,
       }}
     >
-      <div className="p-6 bg-[#FAF9F4] min-h-screen font-quicksand">
+      <div className="sm:p-6 pb-10 pt-6 bg-[#FAF9F4] min-h-screen font-quicksand">
         <Info />
+        <Toaster position="top-right" theme="dark" />
         <div className="container mx-auto flex flex-col gap-2">
           <h1 className="font-topic font-bold text-3xl mb-6">
             Monopoly Go My Cards!
@@ -103,7 +102,7 @@ export default function Home() {
           <p className="py-4">* Available for 4-5 star cards!</p>
 
           <main className="flex max-lg:flex-col-reverse gap-6 w-full">
-            <div className="lg:w-1/2 w-full pr-4">
+            <div className="lg:w-1/2 w-full lg:pr-4">
               <div className="filter-bar flex items-center gap-3 mb-4">
                 <span>Filter:</span>
                 <StarCheckbox value={4} onChange={handleCheckboxChange} />
@@ -111,21 +110,19 @@ export default function Home() {
               </div>
               <CardAlbums />
             </div>
-            <div className="w-1/2 pl-4">
+            <div className="lg:w-1/2 lg:pl-4 max-lg:flex max-lg:gap-3 max-sm:flex-col-reverse max-sm:gap-6">
               <textarea
                 id="selected-cards"
                 className="font-textarea w-full h-96 p-2 border border-gray-300 rounded mb-4"
                 value={fullTextContent}
                 readOnly
               ></textarea>
-              <Toaster position="top-right" theme="dark" />
-              <div className="buttons flex gap-3">
+              <div className="buttons flex gap-3 max-lg:flex-col max-lg:mt-3 max-sm:flex-row">
                 <Button
                   text="COPY"
                   onClick={copyToClipboard}
                   type="green-button"
                 />
-
                 <Button
                   text="RESET"
                   onClick={resetSelections}

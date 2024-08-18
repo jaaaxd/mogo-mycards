@@ -14,7 +14,7 @@ export default function CardAlbums() {
         {cards.map((card, index) => (
           <div
             key={index}
-            className={`card-container flex flex-col w-full items-center space-x-2 p-3 $`}
+            className={`card-container flex flex-col w-full items-center space-x-2 sm:p-3 p-1 $`}
             onClick={() => handleCardClick(index)}
           >
             <div className="card-image relative">
