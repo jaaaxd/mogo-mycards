@@ -31,9 +31,18 @@ module.exports = {
       primary: "#debf59",
       black: "#000",
       white: "#fff",
-      "gray-dark": "#273444",
-      gray: "#cccccc",
-      "gray-light": "#d3dce6",
+      gray: {
+        100: "#CBC6B6",
+        200: "#cccccc",
+        300: "#797256",
+        400: "#413A4A",
+        500: "#3B3447",
+      },
+      gold: {
+        500: "#DEBF59",
+        300: "#E5DEC0",
+        200: "#F6F1E0",
+      },
     },
     container: {
       center: true,

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import Image from "next/image";
+import star from "@/public/icons/star.png";
 
-export default function StarCheckbox({ label, value, onChange }) {
+export default function StarCheckbox({ value, onChange }) {
   const [checked, setChecked] = useState(true);
 
   const handleChange = () => {
@@ -25,7 +27,15 @@ export default function StarCheckbox({ label, value, onChange }) {
             : "border-gray-light border"
         }`}
       >
-        {label}
+        {Array.from({ length: value }).map((_, index) => (
+          <Image
+            key={index}
+            src={star}
+            width={20}
+            alt="Star"
+            className="star"
+          />
+        ))}
       </div>
     </label>
   );
