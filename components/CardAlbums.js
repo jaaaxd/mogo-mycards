@@ -10,7 +10,7 @@ export default function CardAlbums() {
       id="card-select-container"
       className=" bg-gold-300 p-2 h-[570px] overflow-auto inner"
     >
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-3 items-end">
         {cards.map((card, index) => (
           <div
             key={index}
@@ -27,7 +27,7 @@ export default function CardAlbums() {
               />
 
               {card.status === 2 && (
-                <div className="absolute bottom-12 left-0 rounded-[2px] text-[28px]  bg-white px-3 max-h-[40px] text-gray-300 border-[2px] w-[70px] font-bold text-center border-gray-100 justify-center items-center flex">
+                <div className="absolute bottom-14 left-0 rounded-[2px] text-[28px]  bg-white px-3 max-h-[40px] text-gray-300 border-[2px] w-[70px] font-bold text-center border-gray-100 justify-center items-center flex">
                   +1
                 </div>
               )}
