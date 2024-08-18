@@ -13,6 +13,7 @@ const cards = [
   { name: "Arrow-Dynamic", img: "/cards/12.webp", stars: 5 },
   { name: "Pipe Dreams", img: "/cards/13.webp", stars: 4 },
   { name: "Surf's Up!", img: "/cards/14.webp", stars: 4 },
+  { name: "Wipe Out", img: "/cards/32.png", stars: 5 },
   { name: "Hello You", img: "/cards/15.webp", stars: 4 },
   { name: "Right Angle", img: "/cards/16.webp", stars: 4 },
   { name: "Park Place", img: "/cards/17.webp", stars: 5 },
@@ -28,7 +29,7 @@ const cards = [
   { name: "Touch!", img: "/cards/27.webp", stars: 5 },
   { name: "Prime Victory", img: "/cards/28.webp", stars: 5 },
   { name: "Half-Mile Aisle", img: "/cards/29.webp", stars: 4 },
-  { name: "Bursting Buggy", img: "/cards/30.webp", stars: 5 },
+  { name: "Bursting Buggy", img: "/cards/31.png", stars: 5 },
 ];
 
 export default cards;
