@@ -5,6 +5,9 @@ import { Toaster, toast } from "alert";
 import Info from "@/components/ui/Info";
 import CardAlbums from "@/components/CardAlbums";
 import Button from "@/components/ui/Button";
+import logo from "@/public/logo.png";
+import Image from "next/image";
+import { Board } from "@/components/Board";
 
 export const HomeContext = createContext();
 
@@ -81,15 +84,22 @@ export default function Home() {
       value={{
         cards,
         handleCardClick,
+        fullTextContent,
+        resetSelections,
+        copyToClipboard
       }}
     >
-      <div className="sm:p-6 pb-10 pt-6 bg-[#FAF9F4] min-h-screen font-quicksand">
+      <div className="sm:p-6 pb-10 pt-6 bg-[#FAF9F4] h-screen w-screen font-quicksand">
         <Info />
         <Toaster position="top-right" theme="dark" />
         <div className="container mx-auto flex flex-col gap-2">
-          <h1 className="font-topic font-bold text-3xl mb-6">
+          {/* <h1 className="font-topic font-bold text-3xl mb-6">
             Monopoly Go My Cards!
-          </h1>
+          </h1> */}
+          <div className="w-full flex justify-center">
+            <Image src={logo} alt="logo" width={200} />
+          </div>
+
           <p className="text-lg">
             We&apos;ve made it super easy to trade your cards on Discord or any
             other community. Use our text preset to make your message
@@ -111,24 +121,8 @@ export default function Home() {
               <CardAlbums />
             </div>
             <div className="lg:w-1/2 lg:pl-4 max-lg:flex max-lg:gap-3 max-sm:flex-col-reverse max-sm:gap-6">
-              <textarea
-                id="selected-cards"
-                className="font-textarea w-full h-96 p-2 border border-gray-300 rounded mb-4"
-                value={fullTextContent}
-                readOnly
-              ></textarea>
-              <div className="buttons flex gap-3 max-lg:flex-col max-lg:mt-3 max-sm:flex-row">
-                <Button
-                  text="COPY"
-                  onClick={copyToClipboard}
-                  type="green-button"
-                />
-                <Button
-                  text="RESET"
-                  onClick={resetSelections}
-                  type="orange-button"
-                />
-              </div>
+              <Board />
+              
             </div>
           </main>
         </div>

@@ -42,6 +42,7 @@ module.exports = {
         500: "#DEBF59",
         300: "#E5DEC0",
         200: "#F6F1E0",
+        100: "#FAF9F4",
       },
     },
     container: {
