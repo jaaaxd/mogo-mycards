@@ -87,7 +87,7 @@ export default function Home() {
       }}
     >
       <div className="sm:p-6 pb-10 pt-6 bg-[#FAF9F4] h-screen w-screen font-quicksand">
-        <Info />
+        {/* <Info /> */}
         <Toaster position="top-right" theme="dark" />
         <div className="container mx-auto flex flex-col gap-2">
           {/* <h1 className="font-topic font-bold text-3xl mb-6">
@@ -97,7 +97,7 @@ export default function Home() {
             <Image src={logo} alt="logo" width={200} />
           </div>
 
-          <p className="text-lg">
+          {/* <p className="text-lg">
             We&apos;ve made it super easy to trade your cards on Discord or any
             other community. Use our text preset to make your message
             searchable!
@@ -106,7 +106,7 @@ export default function Home() {
             Just click on the card you need and the card you have duplicated
             (it&apos;s set to neutral by default).
           </p>
-          <p className="py-4">* Available for 4-5 star cards!</p>
+          <p className="py-4">* Available for 4-5 star cards!</p> */}
 
           <main className="flex max-lg:flex-col-reverse gap-6 w-full">
             <div className="lg:w-1/2 w-full lg:pr-4">
