@@ -4,7 +4,6 @@ import StarCheckbox from "@/components/ui/StarCheckbox";
 import { Toaster, toast } from "alert";
 import Info from "@/components/ui/Info";
 import CardAlbums from "@/components/CardAlbums";
-import Button from "@/components/ui/Button";
 import logo from "@/public/logo.png";
 import Image from "next/image";
 import { Board } from "@/components/Board";
@@ -40,7 +39,7 @@ export default function Home() {
       .join("\n");
 
     setTextareaContent(
-      `What I have ⭐️\n${cardsInStatus2}\n\nWhat I need ⭐️\n${cardsInStatus3}`
+      `LF Trade 1:1\n\nWhat I have ⭐️\n${cardsInStatus2}\n\nWhat I need ⭐️\n${cardsInStatus3} \n\nDM ME FOR TRADE!✨`
     );
   }, [cards]);
 
@@ -51,9 +50,6 @@ export default function Home() {
       )
     );
   };
-
-  const fullTextContent =
-    "LF Trade 1:1\n\n" + textareaContent + "\n\nDM ME FOR TRADE!✨";
 
   const copyToClipboard = () => {
     navigator.clipboard
@@ -84,9 +80,10 @@ export default function Home() {
       value={{
         cards,
         handleCardClick,
-        fullTextContent,
         resetSelections,
-        copyToClipboard
+        copyToClipboard,
+        textareaContent,
+        setTextareaContent,
       }}
     >
       <div className="sm:p-6 pb-10 pt-6 bg-[#FAF9F4] h-screen w-screen font-quicksand">
@@ -122,7 +119,6 @@ export default function Home() {
             </div>
             <div className="lg:w-1/2 lg:pl-4 max-lg:flex max-lg:gap-3 max-sm:flex-col-reverse max-sm:gap-6">
               <Board />
-              
             </div>
           </main>
         </div>

@@ -3,8 +3,17 @@ import { HomeContext } from "@/pages";
 import Button from "./ui/Button";
 
 export function Board() {
-  const { fullTextContent, resetSelections, copyToClipboard } =
-    useContext(HomeContext);
+  const {
+    fullTextContent,
+    resetSelections,
+    copyToClipboard,
+    setTextareaContent,
+    textareaContent,
+  } = useContext(HomeContext);
+
+  const handleTextareaChange = (e) => {
+    setTextareaContent(e.target.value);
+  };
   return (
     <div className="board-bg bg-gold-500 w-full rounded-xl p-4 border-t-4 border-t-[#eedca2] shadow-sm">
       <div className="board-paper bg-white w-full rounded-lg p-3.5">
@@ -15,7 +24,8 @@ export function Board() {
           <textarea
             id="selected-cards"
             className="font-bold text-lg text-gray-400 w-full h-96 p-2 bg-[#e1dbd097] outline-0 rounded-lg mb-4"
-            value={fullTextContent}
+            value={textareaContent}
+            onChange={handleTextareaChange}
           ></textarea>
           <div className="buttons flex gap-4 max-lg:flex-col max-lg:mt-3 max-sm:flex-row justify-center">
             <div className="w-[200px]">
