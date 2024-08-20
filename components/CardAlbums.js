@@ -8,13 +8,13 @@ export default function CardAlbums() {
   return (
     <div
       id="card-select-container"
-      className=" bg-gold-300 p-2 h-[570px] overflow-auto inner"
+      className=" bg-gold-300 p-2 sm:h-[570px] h-full min-h-full max-sm:h-fit overflow-y-auto inner max-sm:border-t-2 max-sm:border-t-[#8dc9eb]"
     >
       <div className="grid grid-cols-3 items-end">
         {cards.map((card, index) => (
           <div
             key={index}
-            className={`card-container flex flex-col w-full items-center space-x-2 sm:p-3 p-1 $`}
+            className={`card-container flex flex-col w-full items-center space-x-2 sm:p-3 px-[7px] py-[2px]  $`}
             onClick={() => handleCardClick(index)}
           >
             <div className="card-image relative">

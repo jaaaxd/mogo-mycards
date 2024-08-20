@@ -1,5 +1,6 @@
 const cards = [
   { name: "Underdogs", img: "/cards/33.png", stars: 4 },
+  { name: "Victory Podium", img: "/cards/51.png", stars: 4 },
   // { name: "Strong Numbers", img: "/cards/2.webp", stars: 4 },
   // { name: "Worth It", img: "/cards/3.webp", stars: 4 },
   // { name: "Calamity!", img: "/cards/4.webp", stars: 4 },
@@ -23,7 +24,7 @@ const cards = [
   { name: "Park Place", img: "/cards/43.png", stars: 5 },
   { name: "Mind the Gap", img: "/cards/44.png", stars: 5 },
   // { name: "Missing in Action", img: "/cards/18.webp", stars: 4 },
-  // { name: "Barrowing Forward", img: "/cards/19.webp", stars: 5 },
+  { name: "Barrowing Forward", img: "/cards/50.png", stars: 5 },
   // { name: "Dapper Fellows", img: "/cards/20.webp", stars: 4 },
   // { name: "Duck and Cover", img: "/cards/21.webp", stars: 5 },
   { name: "Mine? Mine?", img: "/cards/45.png", stars: 5 },

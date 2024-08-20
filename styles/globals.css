@@ -28,6 +28,10 @@ body {
     "wdth" 100;
 }
 
+.bg {
+  background-image: url('/bg.png');
+}
+
 .inner {
   box-shadow: 
   inset 0 6px 5px 0 rgb(0 0 0 / 0.1), /* Top shadow */
@@ -41,7 +45,7 @@ body {
   background: linear-gradient(rgb(99, 198, 4) 0%, rgb(74, 194, 0) 100%) 0% 0% no-repeat border-box border-box;
   box-shadow: rgb(53, 144, 0) 0px 0.125rem 0px 0px, rgba(179, 174, 119, 0.6) 0px 0.25rem 0.125rem 0px;
   border: 1px solid rgb(123, 228, 34);
-  transition: 0.1s cubic-bezier(0, 1.5, 1, 2);
+  transition: 0.1s cubic-bezier(0, 1.5, 1, 1);
 }
 
 .green-button:active {
@@ -55,8 +59,8 @@ body {
   text-shadow: rgba(0, 0, 0, 0.16) 0.03125rem 0.0125rem;
   background: linear-gradient(rgb(255, 165, 9) 0%, rgb(228, 156, 0) 100%) 0% 0% no-repeat border-box border-box;
   box-shadow: rgb(187, 115, 0) 0px 0.125rem 0px 0px, rgba(180, 151, 136, 0.6) 0px 0.25rem 0.125rem 0px;
-  border: 1px solid rgb(228, 167, 34);
-  transition: 0.1s cubic-bezier(0, 1.5, 1, 2);
+  border: 1px solid rgb(237, 182, 64);
+  transition: 0.1s cubic-bezier(0, 1.5, 1, 1);
 }
 
 .orange-button:active {
@@ -71,6 +75,27 @@ body {
 .board-bg {
   background: linear-gradient(190deg, #debf59, #f5df9d ,#debf59);
 }
+
+.filter-checked {
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(rgb(188, 146, 246) 0%, rgb(168, 124, 213) 100%);
+  box-shadow: rgb(119, 68, 214) 0px 0.1rem 0px 0px, rgba(125, 106, 129, 0.6) 0px 0px 0.125rem 0px;
+  border: 1px solid rgb(189, 150, 231);
+  transition: 0.1s cubic-bezier(0, 1.5, 1, 1);
+  transform: scale(99%);
+}
+
+.filter {
+  font-weight: 800;
+  color: rgb(255, 255, 255);
+  background: linear-gradient(rgb(190, 190, 190) 0%, rgb(164, 164, 164) 100%);
+  box-shadow: rgb(147, 147, 147) 0px 0.2rem 0px 0px, rgba(52, 52, 52, 0.6) 0px 1px 0.125rem 0px;
+  border: 1px solid rgb(190, 190, 190);
+  transition: 0.1s cubic-bezier(0, 1.5, 1, 1);
+}
+
+
 
 @layer base {
   :root {
