@@ -1,6 +1,5 @@
 import { useState, useEffect, createContext } from "react";
 import cardsData from "@/data/cardsData";
-import StarCheckbox from "@/components/ui/StarCheckbox";
 import { Toaster, toast } from "alert";
 import Info from "@/components/ui/Info";
 import CardAlbums from "@/components/CardAlbums";
@@ -8,27 +7,46 @@ import logo from "@/public/logo.png";
 import Image from "next/image";
 import { Board } from "@/components/Board";
 import read from "@/public/icons/read-me3.svg";
+import Filter from "@/components/Filter";
 
 export const HomeContext = createContext();
 
 export default function Home() {
+  const [cards, setCards] = useState(cardsData);
   const [textareaContent, setTextareaContent] = useState("");
   const [selectedStars, setSelectedStars] = useState([4, 5]);
-
-  const filterCards = (cardsData, selectedStars) => {
-    return cardsData.filter((card) => selectedStars.includes(card.stars));
-  };
-
-  const filteredCards = filterCards(cardsData, selectedStars);
-
-  const [cards, setCards] = useState(
-    filteredCards.map((card) => ({ ...card, status: 1 }))
-  );
+  const [query, setQuery] = useState("");
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
-    setCards(filteredCards.map((card) => ({ ...card, status: 1 })));
-  }, [selectedStars, cardsData]);
+    let filteredCards = cardsData.filter((card) =>
+      selectedStars.includes(card.stars)
+    );
+    if (query) {
+      const lowerCaseQuery = query.toLowerCase();
+      filteredCards = filteredCards.filter((card) =>
+        card.name.toLowerCase().includes(lowerCaseQuery)
+      );
+    }
+    setCards(filteredCards);
+  }, [refresh, selectedStars, query]);
 
+  //-- Change card status when click
+  const handleCardClick = (index) => {
+    cardsData[index].status = (cardsData[index].status % 3) + 1;
+    setRefresh(!refresh);
+  };
+
+  //-- Star filter change
+  const handleCheckboxChange = (value, isChecked) => {
+    if (isChecked) {
+      setSelectedStars([...selectedStars, value]);
+    } else {
+      setSelectedStars(selectedStars.filter((v) => v !== value));
+    }
+  };
+
+  //-- Set text --
   useEffect(() => {
     const cardsInStatus2 = cards
       .filter((card) => card.status === 2)
@@ -44,14 +62,7 @@ export default function Home() {
     );
   }, [cards]);
 
-  const handleCardClick = (index) => {
-    setCards((prevCards) =>
-      prevCards.map((card, i) =>
-        i === index ? { ...card, status: (card.status % 3) + 1 } : card
-      )
-    );
-  };
-
+  //-- Button funtions
   const copyToClipboard = () => {
     navigator.clipboard
       .writeText(textareaContent)
@@ -64,16 +75,8 @@ export default function Home() {
   };
 
   const resetSelections = () => {
-    setCards(filteredCards.map((card) => ({ ...card, status: 1 })));
-    setTextareaContent("");
-  };
-
-  const handleCheckboxChange = (value, isChecked) => {
-    if (isChecked) {
-      setSelectedStars([...selectedStars, value]);
-    } else {
-      setSelectedStars(selectedStars.filter((v) => v !== value));
-    }
+    cardsData.map((card) => (card.status = 1));
+    setRefresh(!refresh);
   };
 
   return (
@@ -85,6 +88,8 @@ export default function Home() {
         copyToClipboard,
         textareaContent,
         setTextareaContent,
+        handleCheckboxChange,
+        setQuery,
       }}
     >
       <Toaster position="top-right" theme="dark" />
@@ -114,40 +119,7 @@ export default function Home() {
 
           <main className="flex max-lg:flex-col-reverse sm:gap-6 gap-[10px] w-full flex-grow-1 flex-grow">
             <div className="lg:w-1/2 w-full lg:pr-4 flex-grow flex flex-col">
-              <div className="filter-bar w-full flex items-center justify-between sm:gap-3 gap-2 mb-[10px] self-center max-sm:px-3">
-                <div className="flex gap-2">
-                <StarCheckbox
-                  text="4-star"
-                  value={4}
-                  onChange={handleCheckboxChange}
-                />
-                <StarCheckbox
-                  text="5-star"
-                  value={5}
-                  onChange={handleCheckboxChange}
-                />
-                </div>
-
-                <label className="h-7 bg-white border-2 border-gold-500 sm:px-4 px-2 py-1 rounded-full max-sm:text-sm flex items-center justify-center">
-                  <input
-                    type="text"
-                    className="w-full text-sm placeholder:text-gray-200 outline-none mx-1"
-                    placeholder="Search"
-                  />
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    fill="#a88d35"
-                    className="h-4 w-4 opacity-70"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </label>
-              </div>
+              <Filter />
               <CardAlbums />
             </div>
             <div className="lg:w-1/2 lg:pl-4 max-lg:flex max-lg:gap-3 max-sm:flex-col-reverse max-sm:gap-6">
