@@ -6,16 +6,16 @@ export default function Filter() {
   const { handleCheckboxChange, setQuery } = useContext(HomeContext);
 
   return (
-    <div className="filter-bar w-full flex items-center justify-between sm:gap-3 gap-2 mb-[10px] self-center max-sm:px-3">
+    <div className="filter-bar w-full flex items-center justify-between sm:gap-3 gap-2 max-sm:mb-[10px] self-center max-md:px-4">
       <div className="flex gap-2">
         <StarCheckbox text="4-star" value={4} onChange={handleCheckboxChange} />
         <StarCheckbox text="5-star" value={5} onChange={handleCheckboxChange} />
       </div>
 
-      <label className="h-7 bg-white border-2 border-gold-500 sm:px-4 px-2 py-1 rounded-full max-sm:text-sm flex items-center justify-center">
+      <label className="sm:h-9 h-7 bg-white border-2 border-gold-500 sm:px-4 px-2 py-1 rounded-full max-sm:text-sm flex items-center justify-center">
         <input
           type="text"
-          className="w-full text-sm placeholder:text-gray-200 outline-none mx-1"
+          className="w-full lg:text-base text-sm placeholder:text-gray-200 outline-none mx-1 text-gray-400"
           placeholder="Search"
           onChange={(e) => setQuery(e.target.value)}
         />

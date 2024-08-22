@@ -1,12 +1,9 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-<g id="SVGRepo_bgCarrier" stroke-width="0"/>
-
-<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-
-<g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M4.17157 3.17157C3 4.34315 3 6.22876 3 10V14C3 17.7712 3 19.6569 4.17157 20.8284C5.34315 22 7.22876 22 11 22H13C16.7712 22 18.6569 22 19.8284 20.8284C21 19.6569 21 17.7712 21 14V10C21 6.22876 21 4.34315 19.8284 3.17157C18.6569 2 16.7712 2 13 2H11C7.22876 2 5.34315 2 4.17157 3.17157ZM7.25 8C7.25 7.58579 7.58579 7.25 8 7.25H16C16.4142 7.25 16.75 7.58579 16.75 8C16.75 8.41421 16.4142 8.75 16 8.75H8C7.58579 8.75 7.25 8.41421 7.25 8ZM7.25 12C7.25 11.5858 7.58579 11.25 8 11.25H16C16.4142 11.25 16.75 11.5858 16.75 12C16.75 12.4142 16.4142 12.75 16 12.75H8C7.58579 12.75 7.25 12.4142 7.25 12ZM8 15.25C7.58579 15.25 7.25 15.5858 7.25 16C7.25 16.4142 7.58579 16.75 8 16.75H13C13.4142 16.75 13.75 16.4142 13.75 16C13.75 15.5858 13.4142 15.25 13 15.25H8Z" fill="#dbceb6"/> </g>
-
-</svg>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
+<svg fill="#105edc" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="800px" viewBox="-4.55 -4.55 54.59 54.59" xml:space="preserve">
+<g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(8.871525,8.871525), scale(0.61)">
+<rect x="-4.55" y="-4.55" width="54.59" height="54.59" rx="0" fill="#ffffff" strokewidth="0"/>
+</g>
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+<g id="SVGRepo_iconCarrier"> <g> <path d="M40.022,6.393C40.022,2.862,37.161,0,33.629,0H11.864C8.333,0,5.471,2.862,5.471,6.393v32.708 c0,3.53,2.861,6.393,6.393,6.393h21.765c3.531,0,6.394-2.862,6.394-6.393L40.022,6.393L40.022,6.393z M20.373,32.092H14.36 c-1.365,0-2.473-1.094-2.473-2.459s1.107-2.459,2.473-2.459h6.013c1.365,0,2.473,1.094,2.473,2.459 C22.846,30.999,21.738,32.092,20.373,32.092z M28.39,22.255H14.36c-1.365,0-2.473-1.093-2.473-2.459 c0-1.366,1.107-2.459,2.473-2.459h14.029c1.365,0,2.472,1.093,2.472,2.459C30.861,21.162,29.754,22.255,28.39,22.255z M31.061,12.419H14.36c-1.365,0-2.473-1.155-2.473-2.521s1.107-2.521,2.473-2.521h16.701c1.365,0,2.473,1.155,2.473,2.521 S32.427,12.419,31.061,12.419z"/> </g> </g>
+</svg>
