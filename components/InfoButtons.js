@@ -63,7 +63,7 @@ export default function InfoButtons() {
                 <li>✧ Login account to save your selected cards</li>
                 <li>✧ Feedback form</li>
               </ul>
-              <form>
+              <form method="dialog">
                 <button className="btn-sm btn-circle absolute right-[50%] translate-x-1/2 -bottom-12 text-[#9f9777ed] font-extrabold text-lg border-2 border-[#867a50d8]">
                   X
                 </button>
@@ -87,7 +87,7 @@ export default function InfoButtons() {
                 Then, copy the text to share with your community
               </h2>
 
-              <form>
+              <form method="dialog">
                 <button className="btn-sm btn-circle absolute right-[50%] translate-x-1/2 -bottom-12 text-gray-300 font-extrabold text-lg border-2 border-[#af9d5d7c]">
                   X
                 </button>

@@ -13,9 +13,9 @@ export default function CardAlbums() {
         </div>
         <div
           id="card-select-container"
-          className=" bg-gold-300 p-2 sm:h-full h-full fl max-sm:h-fit overflow-y-auto inner max-sm:border-t-2 max-sm:border-t-[#8dc9eb] flex justify-center"
+          className=" bg-gold-300 p-2 h-full max-lg:min-h-[500px] overflow-y-auto inner max-sm:border-t-2 max-sm:border-t-[#8dc9eb] flex justify-center"
         >
-          <div className="grid grid-cols-3 max-lg:grid-cols-4 max-sm:grid-cols-3 ">
+          <div className="grid grid-cols-3 max-lg:grid-cols-4 max-sm:grid-cols-3 h-fit">
             {cards.map((card, index) => (
               <div
                 key={index}
