@@ -4,7 +4,7 @@ import Button from "./ui/Button";
 import logo from "@/public/logo.png";
 import Image from "next/image";
 
-export function Board() {
+export default function Board() {
   const {
     resetSelections,
     copyToClipboard,
@@ -22,7 +22,7 @@ export function Board() {
           <div className="lg:hidden w-[160px] pb-[2px] self-center flex justify-center">
             <Image src={logo} alt="logo" />
           </div>
-          <div className="sm:h-full max-lg:max-w-[697px] w-full self-center min-h-32 flex max-sm:flex-col max-lg:flex-row flex-col max-lg:mb-3 max-lg:gap-3">
+          <div className="sm:h-full max-lg:max-w-[578px] w-full self-center min-h-32 flex max-sm:flex-col max-lg:flex-row flex-col max-lg:mb-3 max-lg:gap-3">
             <textarea
               id="selected-cards"
               className="font-bold lg:text-base text-sm text-gray-400 w-full sm:h-full h-32 p-2 bg-[#e1dbd097] outline-0 rounded-lg"

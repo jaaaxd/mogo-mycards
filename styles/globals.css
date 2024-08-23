@@ -108,3 +108,25 @@ body {
   border: 1px solid rgb(190, 190, 190);
   transition: 0.1s cubic-bezier(0, 1.5, 1, 1);
 }
+
+@keyframes smooth-gradient {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+.bg-gold-animation {
+  background: linear-gradient(
+    315deg,
+    #e3bb38,
+    #debf59,
+    #fce8a9,
+    #debf59,
+    #e3bb38
+  );
+  background-size: 400% 100%;
+  animation: smooth-gradient 4s linear infinite alternate;
+}

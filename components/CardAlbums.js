@@ -1,4 +1,3 @@
-import cardsData from "@/data/cardsData";
 import { HomeContext } from "@/pages";
 import { useContext } from "react";
 import Filter from "./Filter";
@@ -20,7 +19,7 @@ export default function CardAlbums() {
             {cards.map((card, index) => (
               <div
                 key={index}
-                className={`card-container flex flex-col w-full max-w-[180px] items-center justify-end space-x-2 sm:p-3 px-[7px] py-[2px]  $`}
+                className={`card-container flex flex-col w-full max-w-[150px] items-center justify-end space-x-2 sm:p-3 px-[7px] py-[2px]  $`}
                 onClick={() => handleCardClick(index)}
               >
                 <div className="card-image relative">
@@ -33,7 +32,7 @@ export default function CardAlbums() {
                   />
 
                   {card.status === 2 && (
-                    <div className="absolute bottom-11 left-0 rounded-[2px] text-[22px]  bg-white pl-2 pr-3 max-h-[32px] text-gray-300 border-[2px] w-[60px] font-bold text-center border-gray-100 justify-center items-center flex">
+                    <div className="absolute bottom-[33px] left-0 rounded-[2px] lg:text-[19px] text-gray-300 bg-white pl-2 pr-3 max-h-[32px] lg:h-7 border w-[45px] lg:w-[55px] text-center border-gray-100 justify-center items-center flex">
                       +1
                     </div>
                   )}

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Image from "next/image";
-import star from "@/public/icons/star.png";
 
 export default function StarCheckbox({ text, value, onChange }) {
   const [checked, setChecked] = useState(true);
