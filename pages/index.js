@@ -33,8 +33,9 @@ export default function Home() {
 
   //-- Change card status when click
   const handleCardClick = (index) => {
-    cardsData[index].status = (cardsData[index].status % 3) + 1;
-    setRefresh(!refresh);
+    const updatedCards = [...cards];
+    updatedCards[index].status = (updatedCards[index].status % 3) + 1;
+    setCards(updatedCards);
   };
 
   //-- Star filter change
