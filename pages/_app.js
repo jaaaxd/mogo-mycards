@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
         <title>MOGO Mycards - Trading Message Generator</title>
         <link rel="icon" href="/logo.png" />
       </Head>
-      <GoogleAnalytics gaId={process.env.GA_ID} />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
       <Component {...pageProps} />
     </>
   );
