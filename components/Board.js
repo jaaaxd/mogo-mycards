@@ -29,7 +29,7 @@ export default function Board() {
               value={textareaContent}
               onChange={(e) => setTextareaContent(e.target.value)}
             ></textarea>
-            <div className="buttons flex lg:gap-6 gap-3 max-sm:flex-row max-lg:flex-col lg:justify-center max-sm:justify-center lg:mt-3 lg:mb-1">
+            <div className="buttons flex lg:gap-6 gap-3 max-sm:flex-row max-lg:flex-col lg:justify-center max-sm:justify-center lg:mt-[14px] lg:mb-1">
               <div className="lg:w-[170px] w-[110px] max-sm:w-[140px]">
                 <Button
                   text="COPY"

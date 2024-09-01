@@ -7,19 +7,19 @@ export default function InfoButtons() {
   return (
     <>
       <button
-        className="absolute top-8 lg:top-8 sm:top-[58px] max-lg:left-[54px] lg:right-[64px] max-sm:left-[30px] w-6 h-6 rounded-full lg:text-white text-[#ccbfa7] text-sm bg-[#ebe5cdb1] lg:bg-[#105edc] transition-transform duration-100  lg:active:scale-95 lg:shadow-sm font-textarea font-extrabold"
+        className="absolute top-8 lg:top-8 sm:top-[58px] max-lg:left-[54px] lg:right-[64px] max-sm:left-[30px] w-6 h-6 rounded-full lg:text-white text-[#ccbfa7] text-sm bg-[#ebe5cdb1] lg:bg-[#105edc] hover:scale-105 transition-transform duration-100 active:scale-90 lg:shadow-sm font-textarea font-extrabold"
         onClick={() => document.getElementById("how-to-modal").showModal()}
       >
         i
       </button>
       <button
-        className="absolute lg:hidden top-8 sm:top-[58px] sm:right-[54px] right-[30px] w-6 h-6 rounded-full"
+        className="absolute lg:hidden top-8 sm:top-[58px] sm:right-[54px] right-[30px] w-6 h-6 rounded-full hover:scale-105 transition-transform duration-100 active:scale-90"
         onClick={() => document.getElementById("about-modal").showModal()}
       >
         <Image alt="infomation" src={read} />
       </button>
       <button
-        className="absolute max-lg:hidden top-[32px] right-8 w-[25px] h-[25px]  rounded-full active:scale-95 shadow-sm"
+        className="absolute max-lg:hidden top-[32px] right-8 w-[25px] h-[25px]  rounded-full shadow-sm hover:scale-105 transition-transform duration-100 active:scale-90"
         onClick={() => document.getElementById("about-modal").showModal()}
       >
         <Image alt="infomation" src={readBold} />
@@ -78,7 +78,7 @@ export default function InfoButtons() {
               </a>
 
               <form method="dialog">
-                <button className="btn-sm btn-circle absolute right-[50%] translate-x-1/2 -bottom-12 text-[#9f9777ed] font-extrabold text-lg border-2 border-[#867a50d8]">
+                <button className="btn-sm btn-circle absolute right-[50%] translate-x-1/2 -bottom-12 text-[#9f9777ed] hover:text-[#d3caa4ed] font-extrabold text-lg border-2 border-[#867a50d8] hover:border-[#ae9d5dd8]">
                   X
                 </button>
               </form>
@@ -102,7 +102,7 @@ export default function InfoButtons() {
               </h2>
 
               <form method="dialog">
-                <button className="btn-sm btn-circle absolute right-[50%] translate-x-1/2 -bottom-12 text-gray-300 font-extrabold text-lg border-2 border-[#af9d5d7c]">
+                <button className="btn-sm btn-circle absolute right-[50%] translate-x-1/2 -bottom-12 text-[#9f9777ed] hover:text-[#d3caa4ed] font-extrabold text-lg border-2 border-[#867a50d8] hover:border-[#ae9d5dd8]">
                   X
                 </button>
               </form>

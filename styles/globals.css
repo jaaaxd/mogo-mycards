@@ -56,6 +56,10 @@ body {
   transition: 0.1s cubic-bezier(0, 1.5, 1, 1);
 }
 
+.green-button:hover {
+  background: linear-gradient(rgb(170, 219, 22) 0%, rgb(116, 204, 1) 100%);
+}
+
 .green-button:active {
   box-shadow: rgb(53, 144, 0) 0px 0.1rem 0px 0px,
     rgba(179, 174, 119, 0.6) 0px 0 0.125rem 0px;
@@ -72,6 +76,10 @@ body {
     rgba(180, 151, 136, 0.6) 0px 0.25rem 0.125rem 0px;
   border: 1px solid rgb(237, 182, 64);
   transition: 0.1s cubic-bezier(0, 1.5, 1, 1);
+}
+
+.orange-button:hover {
+  background: linear-gradient(rgb(255, 203, 49) 0%, rgb(230, 160, 8) 100%);
 }
 
 .orange-button:active {
@@ -99,6 +107,10 @@ body {
   transform: scale(99%);
 }
 
+.filter-checked:hover {
+  background: linear-gradient(rgb(176, 132, 238) 0%, rgb(172, 109, 208) 100%);
+}
+
 .filter {
   font-weight: 800;
   color: rgb(255, 255, 255);
@@ -107,6 +119,10 @@ body {
     rgba(52, 52, 52, 0.6) 0px 1px 0.125rem 0px;
   border: 1px solid rgb(190, 190, 190);
   transition: 0.1s cubic-bezier(0, 1.5, 1, 1);
+}
+
+.filter:hover {
+  background: linear-gradient(rgb(208, 202, 207) 0%, rgb(164, 164, 164) 100%);
 }
 
 @keyframes smooth-gradient {
