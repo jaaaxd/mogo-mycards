@@ -1,6 +1,7 @@
 import readBold from "@/public/icons/read-me2.svg";
 import read from "@/public/icons/read-me3.svg";
 import Image from "next/image";
+import email from "@/public/icons/email.svg";
 
 export default function InfoButtons() {
   return (
@@ -29,7 +30,7 @@ export default function InfoButtons() {
       <dialog id="about-modal" className="modal bg-[#0000006c]">
         <div className="bg-white p-1.5 rounded-xl relative">
           <div className="bg-gold-animation p-1.5 rounded-lg min-w-52 min-h-52">
-            <div className="bg-gold-200 rounded-md p-4 max-w-sm mx-auto">
+            <div className="bg-gold-200 rounded-md p-6 max-w-sm mx-auto">
               <h2 className="text-center font-extrabold text-[18px] text-[#bda03e] mb-2">
                 Generate a trading message for <br /> MOGO cards in just a few
                 clicks
@@ -60,9 +61,22 @@ export default function InfoButtons() {
 
               <h2 className="font-bold mb-1 text-[#61605e]">Next Update:</h2>
               <ul className="text-gray-300">
-                <li>✧ Login account to save your selected cards</li>
-                <li>✧ Feedback form</li>
+                <li>✧ Login account to save selected cards</li>
               </ul>
+              <a
+                className="contact text-[#ccbfa7] hover:text-[#ad9f85] mt-2 w-full flex gap-2 items-center"
+                href="mailto:monomycards@gmail.com"
+              >
+                <Image
+                  src={email}
+                  alt="email"
+                  onClick="mailto:monomycards@gmail.com"
+                  width={17}
+                  height={17}
+                />
+                Contact
+              </a>
+
               <form method="dialog">
                 <button className="btn-sm btn-circle absolute right-[50%] translate-x-1/2 -bottom-12 text-[#9f9777ed] font-extrabold text-lg border-2 border-[#867a50d8]">
                   X
