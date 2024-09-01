@@ -19,7 +19,7 @@ export default function InfoButtons() {
         <Image alt="infomation" src={read} />
       </button>
       <button
-        className="absolute max-lg:hidden top-[32px] right-8 w-[25px] h-[25px]  rounded-full shadow-sm hover:scale-105 transition-transform duration-100 active:scale-90"
+        className="absolute max-lg:hidden top-[32px] right-8 w-[25px] h-[25px] rounded-full shadow-sm hover:scale-105 transition-transform duration-100 active:scale-90"
         onClick={() => document.getElementById("about-modal").showModal()}
       >
         <Image alt="infomation" src={readBold} />
@@ -30,14 +30,13 @@ export default function InfoButtons() {
       <dialog id="about-modal" className="modal bg-[#0000006c]">
         <div className="bg-white p-1.5 rounded-xl relative">
           <div className="bg-gold-animation p-1.5 rounded-lg min-w-52 min-h-52">
-            <div className="bg-gold-200 rounded-md p-6 max-w-sm mx-auto">
+            <div className="bg-gold-200 rounded-md py-6 px-7 max-w-sm mx-auto">
               <h2 className="text-center font-extrabold text-[18px] text-[#bda03e] mb-2">
                 Generate a trading message for <br /> MOGO cards in just a few
                 clicks
               </h2>
               <h2 className="text-center font-bold text-[17px] text-[#61605e] mb-2">
-                Make them searchable & boost visibility
-                <br /> to more people!
+                Make them searchable &<br /> boost visibility to more people!
               </h2>
 
               <ul className="mb-4 text-gray-300">
@@ -90,7 +89,7 @@ export default function InfoButtons() {
       <dialog id="how-to-modal" className="modal bg-[#0000006c]">
         <div className="bg-white p-1.5 rounded-xl relative">
           <div className="bg-gold-animation p-1.5 rounded-lg min-w-52 min-h-fit">
-            <div className="bg-gold-200 rounded-md p-6 max-w-lg mx-auto">
+            <div className="bg-gold-200 rounded-md sm:p-6 p-4 max-w-lg mx-auto">
               <h2 className="text-center font-extrabold text-[18px] text-[#bda03e] mb-2">
                 Just click the card to change its status:
               </h2>
