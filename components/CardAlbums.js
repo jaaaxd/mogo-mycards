@@ -26,6 +26,7 @@ export default function CardAlbums() {
                   <img
                     src={card.img}
                     alt={card.name}
+                    draggable="false"
                     className={`w-full h-full object-contain mb-2 ${
                       card.status === 3 ? "grayscale" : ""
                     }`}
