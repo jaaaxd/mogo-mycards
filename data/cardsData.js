@@ -40,11 +40,11 @@ let cards = [
   { name: "Sabre Stars", img: "/cards/53.png", stars: 4, status: 1 },
   // { name: "Present Arms", img: "/cards/26.webp", stars: 4 , status: 1 },
   { name: "Touch!", img: "/cards/49.png", stars: 5, status: 1 },
-  // { name: "Prime Victory", img: "/cards/28.webp", stars: 5 , status: 1 },
-  // { name: "Half-Mile Aisle", img: "/cards/29.webp", stars: 4 , status: 1 },
-  // { name: "Proper Shopper", img: "/cards/29.webp", stars: 4 , status: 1 },
-  // { name: "Aisle Athletes", img: "/cards/31.png", stars: 5 , status: 1 },
-  // { name: "Bursting Buggy", img: "/cards/31.png", stars: 5 , status: 1 },
+  { name: "Prime Victory", img: "/cards/78.png", stars: 5, status: 1 },
+  { name: "Half-Mile Aisle", img: "/cards/76.png", stars: 4, status: 1 },
+  { name: "Proper Shopper", img: "/cards/74.png", stars: 4, status: 1 },
+  { name: "Aisle Athletes", img: "/cards/77.png", stars: 5, status: 1 },
+  { name: "Bursting Buggy", img: "/cards/75.png", stars: 5, status: 1 },
 ];
 
 export default cards;
